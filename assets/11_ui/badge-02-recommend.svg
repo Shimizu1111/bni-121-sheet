@@ -1,0 +1,10 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="124" height="60" viewBox="0 0 124 60">
+    <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+<rect x="15" y="12" width="94" height="36" rx="6"
+      fill="#FFFFFF" stroke="#E15050" stroke-width="1.5"/>
+<text x="62.0" y="35.0"
+      font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="14" font-weight="700"
+      fill="#E15050" text-anchor="middle">おすすめ</text>
+
+  </svg>

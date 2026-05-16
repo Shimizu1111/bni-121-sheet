@@ -1,0 +1,17 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="280" height="320" viewBox="0 0 280 320">
+    <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+<rect x="30" y="30" width="220" height="220" rx="14"
+      fill="#0B1D3A"/>
+<text x="30" y="284"
+      font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="14" font-weight="500"
+      fill="#666666" letter-spacing="0.04em">
+  メインカラー
+</text>
+<text x="30" y="306"
+      font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="16" font-weight="700"
+      fill="#0B1D3A" letter-spacing="0.02em">
+  #0B1D3A
+</text>
+
+  </svg>

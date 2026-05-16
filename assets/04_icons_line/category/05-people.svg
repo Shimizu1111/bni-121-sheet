@@ -1,0 +1,14 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="220" height="280" viewBox="0 0 220 280">
+    <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+<circle cx="110" cy="90" r="64" fill="#E8EEFC"/>
+<g transform="translate(75.0,55.0) scale(2.1875)"
+   fill="none" stroke="#1E4DB7" stroke-width="2.1"
+   stroke-linecap="round" stroke-linejoin="round">
+  <path d="M11 14 A3.5 3.5 0 1 0 11 7 A3.5 3.5 0 1 0 11 14 Z M21 14 A3.5 3.5 0 1 0 21 7 A3.5 3.5 0 1 0 21 14 Z M4 25 C4 21 7 18 11 18 C15 18 18 21 18 25 M14 25 C14 21 17 18 21 18 C25 18 28 21 28 25"/>
+</g>
+<text x="110.0" y="195"
+      font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="13" font-weight="500"
+      fill="#0B1D3A" text-anchor="middle"><tspan x="110.0" dy="0">CRM</tspan><tspan x="110.0" dy="18">（顧客管理）</tspan></text>
+
+  </svg>

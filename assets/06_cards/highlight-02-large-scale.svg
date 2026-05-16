@@ -1,0 +1,20 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="520" height="180" viewBox="0 0 520 180">
+    <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+<rect x="20" y="20" width="480" height="140" rx="12" fill="#0B1D3A"/>
+<!-- icon -->
+<g transform="translate(48,52) scale(1.1)"
+   fill="none" stroke="#F5B400" stroke-width="2.2"
+   stroke-linecap="round" stroke-linejoin="round">
+  <path d="M11 6 H21 V14 A5 5 0 0 1 11 14 Z M11 8 H7 V10 C7 13 9 14 11 14 M21 8 H25 V10 C25 13 23 14 21 14 M14 19 H18 L19 23 H13 Z M11 23 H21 V26 H11 Z"/>
+</g>
+<text x="108" y="72" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="17"
+      font-weight="700" fill="#FFFFFF">大規模システム開発</text>
+
+<text x="48" y="104" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="13"
+      font-weight="400" fill="#E5E7EB">大手企業向けポイント基盤の開発・運用</text>
+
+<text x="48" y="126" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="13"
+      font-weight="400" fill="#E5E7EB">（数百万人規模）</text>
+
+  </svg>

@@ -1,0 +1,14 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="220" height="260" viewBox="0 0 220 260">
+    <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+<circle cx="110" cy="90" r="64" fill="#E8EEFC"/>
+<g transform="translate(75.0,55.0) scale(2.1875)"
+   fill="none" stroke="#1E4DB7" stroke-width="2.1"
+   stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 8 H25 A1 1 0 0 1 26 9 V26 A1 1 0 0 1 25 27 H7 A1 1 0 0 1 6 26 V9 A1 1 0 0 1 7 8 Z M11 5 V11 M21 5 V11 M6 14 H26"/>
+</g>
+<text x="110.0" y="195"
+      font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="13" font-weight="500"
+      fill="#0B1D3A" text-anchor="middle">予約管理システム</text>
+
+  </svg>

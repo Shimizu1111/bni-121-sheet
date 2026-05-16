@@ -1,0 +1,25 @@
+    <svg xmlns="http://www.w3.org/2000/svg" width="902" height="190" viewBox="0 0 902 190">
+      <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+  <!-- tag -->
+  <rect x="60" y="63.6" width="110" height="36"
+        rx="6" fill="#0B1D3A"/>
+  <text x="115.0" y="86.6"
+        font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="13" font-weight="500"
+        fill="#FFFFFF" text-anchor="middle">見出し(H3)</text>
+
+  <!-- sample text -->
+  <text font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="18"
+        font-weight="700" fill="#0B1D3A"
+        letter-spacing="0">
+<tspan x="202" y="75">AIコンサルティング</tspan>
+  </text>
+
+  <!-- spec -->
+  <text x="202" y="113"
+        font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="13" font-weight="400"
+        fill="#666666">
+    Noto Sans JP Bold / 18px / 行間28px
+  </text>
+
+    </svg>

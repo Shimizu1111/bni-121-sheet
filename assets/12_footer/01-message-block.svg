@@ -1,0 +1,15 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="640" height="140" viewBox="0 0 640 140">
+    <rect width="100%" height="100%" fill="#FFFFFF"/>
+
+<rect x="20" y="20" width="600" height="100" rx="12" fill="#0B1D3A"/>
+<circle cx="80" cy="70" r="26" fill="#1B3060"/>
+<g transform="translate(64,54)" fill="none" stroke="#FFFFFF"
+   stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 9 H26 A1 1 0 0 1 27 10 V23 A1 1 0 0 1 26 24 H6 A1 1 0 0 1 5 23 V10 A1 1 0 0 1 6 9 Z M5.5 10 L16 18 L26.5 10"/>
+</g>
+<text x="130" y="62" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="15"
+      font-weight="500" fill="#FFFFFF">AI活用や業務効率化でお困りのことがあれば、</text>
+<text x="130" y="88" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="15"
+      font-weight="500" fill="#FFFFFF">いつでもお気軽にご相談ください！</text>
+
+  </svg>

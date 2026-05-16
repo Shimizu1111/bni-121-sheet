@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>清水勝紀 | BNI 1to1シート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy-1: #0B1D3A;
+  --navy-2: #1B3060;
+  --blue-1: #1E4DB7;
+  --blue-2: #60A5FA;
+  --gold: #F5B400;
+  --gray-1: #333333;
+  --gray-2: #666666;
+  --gray-3: #E5E7EB;
+  --gray-4: #F1F5F9;
+  --white: #FFFFFF;
+  --accent-teal: #0EA5A0;
+  --bg-pale: #E8EEFC;
+  --bg-gradient-from: #E8EEFC;
+  --bg-gradient-to: #DBE7FB;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', -apple-system, sans-serif;
+  color: var(--gray-1);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--gray-4);
+}
+
+/* ═══════════════════════════════
+   HERO
+   ═══════════════════════════════ */
+.hero {
+  background: linear-gradient(135deg, var(--bg-gradient-from), var(--bg-gradient-to));
+  padding: 40px 36px 36px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+}
+/* dot-grid deco */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 16px; right: 16px;
+  width: 120px; height: 80px;
+  background-image: radial-gradient(circle, #94A3B8 2px, transparent 2px);
+  background-size: 14px 14px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero-left { position: relative; z-index: 1; }
+.hero-photo {
+  width: 220px;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(11,29,58,0.18);
+  margin-bottom: 14px;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-script {
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color: var(--blue-1);
+  opacity: 0.55;
+}
+.hero-name {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--navy-1);
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.hero-location {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--gray-2);
+  margin-bottom: 18px;
+}
+.hero-location span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hero-location .loc-icon {
+  width: 14px; height: 14px;
+}
+
+.hero-catch {
+  background: var(--navy-1);
+  color: var(--white);
+  padding: 18px 22px;
+  border-radius: 10px;
+}
+.hero-catch h2 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.hero-catch em { font-style: normal; color: var(--gold); }
+.hero-catch-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 6px;
+}
+
+.hero-right { position: relative; z-index: 1; }
+.about-sidebar {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 20px;
+}
+.about-sidebar-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-1);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--navy-1);
+  margin-bottom: 16px;
+}
+.about-item { margin-bottom: 14px; }
+.about-item:last-child { margin-bottom: 0; }
+.about-item .label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+.about-item .label .icon-circle {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--blue-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10px;
+}
+.about-item .detail {
+  font-size: 12px;
+  color: var(--gray-2);
+  padding-left: 26px;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════
+   SECTION COMMON
+   ═══════════════════════════════ */
+.section-white { background: var(--white); padding: 32px 36px; }
+.section-navy { background: var(--navy-1); color: var(--white); padding: 32px 36px; }
+.section-gray { background: var(--gray-4); padding: 32px 36px; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.section-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy-1);
+  letter-spacing: 0.02em;
+}
+.section-navy .section-header h2 { color: var(--white); }
+.section-header .sub {
+  font-size: 12px;
+  color: var(--gray-2);
+}
+.section-navy .section-header .sub { color: rgba(255,255,255,0.5); }
+
+/* ═══════════════════════════════
+   SERVICE
+   ═══════════════════════════════ */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.service-card {
+  border: 1.5px solid var(--gray-3);
+  border-radius: 12px;
+  padding: 22px;
+  background: var(--white);
+}
+.service-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.svc-icon {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--bg-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.svc-icon img { width: 20px; height: 20px; }
+.service-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-1);
+}
+.service-card ul { list-style: none; }
+.service-card li {
+  font-size: 13px;
+  color: var(--gray-2);
+  padding: 3px 0 3px 16px;
+  position: relative;
+}
+.service-card li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 11px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue-1);
+}
+
+.info-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-3);
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.info-icon {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--gray-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.info-icon img { width: 16px; height: 16px; }
+.info-label { font-size: 11px; color: var(--gray-2); }
+.info-val { font-size: 12px; font-weight: 700; color: var(--navy-1); }
+
+/* ═══════════════════════════════
+   EXPERIENCE (navy bg)
+   ═══════════════════════════════ */
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+.exp-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 18px;
+}
+.exp-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.exp-icon {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  background: var(--blue-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.exp-icon img { width: 14px; height: 14px; filter: brightness(10); }
+.exp-card h4 { font-size: 13px; font-weight: 700; line-height: 1.4; }
+.exp-card p { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+/* ═══════════════════════════════
+   ABOUT ME (values)
+   ═══════════════════════════════ */
+.values-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.value-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.value-item:last-child { margin-bottom: 0; }
+.val-icon {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--bg-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.val-icon img { width: 16px; height: 16px; }
+.value-item h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-1);
+  margin-bottom: 4px;
+}
+.value-item p {
+  font-size: 12px;
+  color: var(--gray-2);
+  line-height: 1.7;
+}
+
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.lifestyle-box {
+  aspect-ratio: 4/3;
+  background: var(--bg-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.lifestyle-box img { width: 48px; height: 48px; opacity: 0.35; }
+.lifestyle-box.wide { grid-column: 1 / -1; aspect-ratio: 2.2/1; }
+.lifestyle-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  color: var(--navy-1);
+  opacity: 0.4;
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════
+   NETWORK
+   ═══════════════════════════════ */
+.network-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+}
+.existing-box {
+  background: var(--white);
+  border: 1px solid var(--gray-3);
+  border-radius: 10px;
+  padding: 16px;
+}
+.existing-box h4 {
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  color: var(--navy-1);
+}
+.existing-box li {
+  font-size: 11px;
+  color: var(--gray-2);
+  list-style: none;
+  padding: 2px 0 2px 12px;
+  position: relative;
+}
+.existing-box li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--blue-1);
+}
+.wanted-area h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--navy-1);
+  color: var(--navy-1);
+}
+.wanted-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.wanted-card {
+  background: var(--white);
+  border: 1px solid var(--gray-3);
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+}
+.wanted-card-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--bg-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+.wanted-card-icon img { width: 18px; height: 18px; }
+.wanted-card h5 {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy-1);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.wanted-card p {
+  font-size: 10px;
+  color: var(--gray-2);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════
+   FOOTER CTA
+   ═══════════════════════════════ */
+.cta-footer {
+  background: var(--navy-1);
+  color: var(--white);
+  padding: 28px 36px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.cta-left .lead {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+.cta-left h2 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--gold);
+}
+.cta-contacts {
+  display: flex;
+  gap: 20px;
+}
+.cta-contacts a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cta-contacts a img { width: 16px; height: 16px; filter: brightness(10); }
+.cta-right {
+  text-align: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 18px 28px;
+}
+.cta-right .script {
+  font-family: 'Dancing Script', cursive;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+.cta-right p {
+  font-size: 11px;
+  opacity: 0.75;
+}
+.cta-right .name {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 1;
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════ */
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; padding: 28px 20px; }
+  .hero-photo { width: 180px; height: 220px; }
+  .hero-name { font-size: 26px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .info-bar { grid-template-columns: 1fr; gap: 8px; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .values-content { grid-template-columns: 1fr; }
+  .network-layout { grid-template-columns: 1fr; }
+  .wanted-grid { grid-template-columns: 1fr 1fr; }
+  .cta-footer { grid-template-columns: 1fr; text-align: center; }
+  .cta-contacts { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-photo">
+      <img src="images/profile.png" alt="清水勝紀">
+    </div>
+    <p class="hero-script">Shimizu Katsunori</p>
+    <h1 class="hero-name">清水 勝紀</h1>
+    <div class="hero-location">
+      <span>
+        <img class="loc-icon" src="assets/04_icons_line/basic/01-pin.svg" alt="">
+        出身地：東雲
+      </span>
+      <span>
+        <img class="loc-icon" src="assets/04_icons_line/basic/01-pin.svg" alt="">
+        居住地：<strong>日本橋</strong>（居住6ヶ月）
+      </span>
+    </div>
+    <div class="hero-catch">
+      <h2>AI × 業務効率化で、<br>中小企業の<em>未来を変える</em></h2>
+      <p class="hero-catch-sub">システム開発とAIコンサルティングで、<br>現場の課題を解決します</p>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="about-sidebar">
+      <div class="about-sidebar-title">ABOUT ME</div>
+      <div class="about-item">
+        <div class="label">
+          <span class="icon-circle">⛺</span> 趣味
+        </div>
+        <div class="detail">
+          <strong>キャンプ</strong><br>
+          夏以外は月1回ほど行っています<br>
+          富士山の富士五湖周辺が好きです
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="label">
+          <span class="icon-circle">♨</span> サウナ
+        </div>
+        <div class="detail">サウナ東京よかったです</div>
+      </div>
+      <div class="about-item">
+        <div class="label">
+          <span class="icon-circle">💪</span> 関心事
+        </div>
+        <div class="detail">
+          <strong>筋トレ</strong><br>
+          最近筋トレ再開しました<br>
+          <strong>ダイエット</strong><br>
+          絶賛ダイエット中です
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE ═══ -->
+<section class="section-white">
+  <div class="section-header">
+    <h2>SERVICE</h2>
+    <span class="sub">専門分野・サービス内容</span>
+  </div>
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="service-card-head">
+        <div class="svc-icon">
+          <img src="assets/04_icons_line/category/01-lightbulb.svg" alt="">
+        </div>
+        <h3>AIコンサルティング</h3>
+      </div>
+      <ul>
+        <li>AI活用余地の診断</li>
+        <li>業務改善・自動化の提案</li>
+        <li>現場目線でのフロー改善</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-card-head">
+        <div class="svc-icon">
+          <img src="assets/04_icons_line/category/02-wrench.svg" alt="">
+        </div>
+        <h3>システム開発</h3>
+      </div>
+      <ul>
+        <li>予約管理システム</li>
+        <li>請求管理システム</li>
+        <li>CRM（顧客管理）</li>
+        <li>業務自動化ツール開発</li>
+      </ul>
+    </div>
+  </div>
+  <div class="info-bar">
+    <div class="info-item">
+      <div class="info-icon">
+        <img src="assets/04_icons_line/basic/01-pin.svg" alt="">
+      </div>
+      <div>
+        <div class="info-label">所在地</div>
+        <div class="info-val">東京（日本橋）</div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">
+        <img src="assets/04_icons_line/basic/02-calendar.svg" alt="">
+      </div>
+      <div>
+        <div class="info-label">事業開始</div>
+        <div class="info-val">2025年4月1日創業</div>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">
+        <img src="assets/04_icons_line/basic/03-person.svg" alt="">
+      </div>
+      <div>
+        <div class="info-label">経験年数</div>
+        <div class="info-val">4年（システムエンジニアとして）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section class="section-navy">
+  <div class="section-header">
+    <h2>EXPERIENCE &amp; ACHIEVEMENTS</h2>
+    <span class="sub">実績・経験</span>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-card-head">
+        <div class="exp-icon">
+          <img src="assets/04_icons_line/basic/08-building.svg" alt="">
+        </div>
+        <h4>大規模システム開発</h4>
+      </div>
+      <p>大手企業向けポイント基盤の開発・運用（数百万人規模）<br>ガチャシステム開発（高負荷対応）</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-head">
+        <div class="exp-icon">
+          <img src="assets/04_icons_line/feature/03-chart-growth.svg" alt="">
+        </div>
+        <h4>業務改善システム</h4>
+      </div>
+      <p>派遣会社向けCRMをリリース（現場の業務改善を最重視）<br>請求書管理システムを開発</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-card-head">
+        <div class="exp-icon">
+          <img src="assets/04_icons_line/basic/02-calendar.svg" alt="">
+        </div>
+        <h4>ツアー会社向け<br>予約管理システム</h4>
+      </div>
+      <p>Spreadsheet × Google Calendar 自動連携<br>予約管理工数を大幅削減</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ME (values) ═══ -->
+<section class="section-white">
+  <div class="section-header">
+    <h2>ABOUT ME</h2>
+    <span class="sub">価値観・内面</span>
+  </div>
+  <div class="values-content">
+    <div>
+      <div class="value-item">
+        <div class="val-icon">
+          <img src="assets/04_icons_line/feature/07-target.svg" alt="">
+        </div>
+        <div>
+          <h4>強い願望</h4>
+          <p>中小企業がもっと気軽にAIを使える社会をつくる<br>単純作業から人を解放し、価値ある仕事に集中できる世界へ</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="val-icon">
+          <img src="assets/04_icons_line/feature/06-key.svg" alt="">
+        </div>
+        <div>
+          <h4>成功の鍵</h4>
+          <p>お客様の目線に立ち、<br>本当に使いやすい仕組みを作ること</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="val-icon">
+          <img src="assets/04_icons_line/feature/08-people.svg" alt="">
+        </div>
+        <div>
+          <h4>誰も知らない私</h4>
+          <p>・キャンプ好きだけど虫が苦手<br>・昔ダンスをやっていた</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="lifestyle-grid">
+        <div class="lifestyle-box">
+          <img src="assets/05_icons/bottom-04-tent.svg" alt="">
+        </div>
+        <div class="lifestyle-box">
+          <img src="assets/05_icons/bottom-06-onsen.svg" alt="">
+        </div>
+        <div class="lifestyle-box wide">
+          <img src="assets/05_icons/bottom-02-car.svg" alt="">
+        </div>
+      </div>
+      <p class="lifestyle-label">lifestyle</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NETWORKS ═══ -->
+<section class="section-gray">
+  <div class="section-header">
+    <h2>NETWORKS &amp; INTRODUCTIONS</h2>
+    <span class="sub">人脈・つながりたい方</span>
+  </div>
+  <div class="network-layout">
+    <div class="existing-box">
+      <h4>
+        <img src="assets/04_icons_line/basic/04-mail.svg" alt="" style="width:16px;height:16px;">
+        既にある人脈
+      </h4>
+      <ul>
+        <li>システムエンジニア / SES / エンジニアコミュニティ</li>
+        <li>AI事業者 / Web制作・広告関係 / SNSマーケター</li>
+      </ul>
+    </div>
+    <div class="wanted-area">
+      <h4>つながりたい業界・企業</h4>
+      <div class="wanted-grid">
+        <div class="wanted-card">
+          <div class="wanted-card-icon">
+            <img src="assets/04_icons_line/basic/07-laptop.svg" alt="">
+          </div>
+          <h5>デジタル・IT系</h5>
+          <p>Web制作・広告・開発会社<br>AI事業者</p>
+        </div>
+        <div class="wanted-card">
+          <div class="wanted-card-icon">
+            <img src="assets/04_icons_line/feature/04-handshake.svg" alt="">
+          </div>
+          <h5>専門サービス</h5>
+          <p>補助金コンサル<br>（税理士・コンサル）<br>情シス不在の中小企業</p>
+        </div>
+        <div class="wanted-card">
+          <div class="wanted-card-icon">
+            <img src="assets/04_icons_line/basic/08-building.svg" alt="">
+          </div>
+          <h5>アナログ文化が<br>残る業界</h5>
+          <p>建設・不動産<br>（紙・FAX文化が強い）<br>業務が紙&amp;Excel中心の会社</p>
+        </div>
+        <div class="wanted-card">
+          <div class="wanted-card-icon">
+            <img src="assets/04_icons_line/category/03-chart_growth.svg" alt="">
+          </div>
+          <h5>サービス・製造業</h5>
+          <p>在庫・シフト管理が煩雑な小売・飲食<br>予約管理や問い合わせが多い旅行・サービス業<br>物流・製造・介護・医療など</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER CTA ═══ -->
+<footer class="cta-footer">
+  <div class="cta-left">
+    <p class="lead">AI活用や業務効率化でお困りのことがあれば、</p>
+    <h2>いつでもお気軽にご相談ください！</h2>
+    <div class="cta-contacts">
+      <a href="#">
+        <img src="assets/04_icons_line/basic/04-mail.svg" alt="">
+        shimizu.katsunori@example.com
+      </a>
+      <a href="#">
+        <img src="assets/04_icons_line/basic/05-phone.svg" alt="">
+        090-1234-5678
+      </a>
+    </div>
+  </div>
+  <div class="cta-right">
+    <p class="script">Let's create the future together!</p>
+    <p>一緒に、より良い未来をつくりましょう。</p>
+    <p class="name">清水 勝紀</p>
+  </div>
+</footer>
+
+</body>
+</html>
