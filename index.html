@@ -213,10 +213,11 @@ body {
 
 .svc-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   margin-bottom: 24px;
 }
+.svc-card h3 small { display:block; font-size:11px; font-weight:500; opacity:.7; margin-top:4px; }
 .svc-card {
   border: 1.5px solid var(--gray-3);
   border-radius: 14px;
@@ -240,7 +241,7 @@ body {
   flex-shrink: 0;
 }
 .svc-circle img { width: 22px; height: 22px; }
-.svc-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); }
+.svc-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); }
 .svc-card ul { list-style: none; margin-bottom: 16px; }
 .svc-card li {
   font-size: 13px; color: var(--gray-2);
@@ -469,7 +470,7 @@ body {
 }
 .wanted-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 .w-card {
@@ -489,8 +490,8 @@ body {
   margin: 0 auto 10px;
 }
 .w-icon img { width: 20px; height: 20px; }
-.w-card h5 { font-size: 11px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.5; }
-.w-card p { font-size: 10px; color: var(--gray-2); line-height: 1.6; }
+.w-card h5 { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.5; }
+.w-card p { font-size: 11px; color: var(--gray-2); line-height: 1.6; }
 
 /* ═══════════════════════════════════
    CTA FOOTER
@@ -559,6 +560,113 @@ body {
   .cta-footer { grid-template-columns: 1fr; padding: 28px 20px; }
   .cta-contacts { flex-direction: column; gap: 8px; }
 }
+
+/* ═══════════════════════════════════
+   SHEETS (BNI 121 format)
+   ═══════════════════════════════════ */
+.glance { padding: 10px 0; border-bottom: 1px solid var(--gray-3); }
+.glance:last-child { border-bottom: none; }
+.glance-l { font-size: 11px; font-weight: 700; color: var(--blue); margin-bottom: 2px; }
+.glance-v { font-size: 13px; color: var(--gray-1); line-height: 1.7; }
+.glance-v small { font-size: 11px; color: var(--gray-2); }
+.glance-v .num { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; color: var(--navy); margin: 0 2px; }
+
+.sheet-nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; gap: 6px; overflow-x: auto;
+  padding: 10px 40px; background: var(--white);
+  border-bottom: 1px solid var(--gray-3);
+  -webkit-overflow-scrolling: touch;
+}
+.sheet-nav a {
+  flex: none; font-size: 12px; font-weight: 500; color: var(--navy);
+  text-decoration: none; padding: 4px 12px; border-radius: 999px;
+  background: var(--gray-4); white-space: nowrap;
+}
+.sheet-nav a:hover { background: var(--pale); }
+
+.sheet { padding: 36px 40px 32px; background: var(--white); scroll-margin-top: 48px; }
+.sheet-pale { background: var(--gray-4); }
+.sheet-dark { background: var(--navy); }
+.sheet-dark .sec-head h2 { color: var(--white); }
+.sheet-dark .sec-head .sub { color: rgba(255,255,255,0.6); }
+.sheet ul { list-style: none; }
+.sheet ul li { position: relative; padding-left: 14px; margin-bottom: 4px; }
+.sheet ul li::before { content: ''; position: absolute; left: 0; top: 0.75em; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); }
+
+.sheet-group {
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  border-left: 4px solid var(--blue); padding-left: 10px;
+  margin: 26px 0 10px; line-height: 1.4;
+}
+.sheet-group:first-of-type { margin-top: 0; }
+.cust-table-wrap + .sheet-group { margin-top: 28px; }
+.sheet-rows > div {
+  display: grid; grid-template-columns: 150px 1fr; gap: 16px;
+  padding: 11px 0; border-bottom: 1px solid var(--gray-3);
+}
+.sheet-rows dt { font-size: 12px; font-weight: 700; color: var(--navy-2); padding-top: 2px; }
+.sheet-rows dd { font-size: 13px; line-height: 1.8; }
+.sheet-rows dd li { margin-bottom: 8px; }
+
+.gains-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.gains-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; padding: 18px 18px 14px; color: rgba(255,255,255,0.85);
+  font-size: 12.5px; line-height: 1.75; position: relative;
+}
+.gains-letter {
+  position: absolute; top: 12px; right: 16px;
+  font-family: 'Outfit', sans-serif; font-size: 30px; font-weight: 800; color: var(--gold); opacity: 0.9; line-height: 1;
+}
+.gains-card h4 { font-family: 'Outfit', sans-serif; font-size: 15px; color: var(--white); margin-bottom: 10px; padding-right: 40px; }
+.gains-card h4 span { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 500; opacity: 0.7; margin-left: 6px; }
+.gains-card p { margin: 8px 0 4px; }
+.gains-card p strong { color: var(--gold); font-size: 12px; }
+.gains-card ul li::before { background: var(--blue-light); }
+
+.qa { list-style: none; counter-reset: qa; }
+.qa > li { counter-increment: qa; position: relative; padding: 0 0 18px 42px; margin-bottom: 18px; border-bottom: 1px solid var(--gray-3); font-size: 13px; }
+.qa > li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.qa > li::before {
+  content: counter(qa); position: absolute; left: 0; top: 0;
+  width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: var(--white);
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+.qa h4 { font-size: 14px; color: var(--navy); margin-bottom: 6px; line-height: 1.6; padding-top: 2px; }
+.talk {
+  background: var(--pale); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0;
+  padding: 8px 14px; margin-top: 8px; font-weight: 500; color: var(--navy);
+}
+
+.circle-grid { list-style: none; counter-reset: c; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.circle-grid li {
+  counter-increment: c; background: var(--white); border: 1px solid var(--gray-3); border-radius: 10px;
+  padding: 12px 14px 12px 44px; position: relative; font-size: 13px; line-height: 1.6;
+}
+.circle-grid li::before {
+  content: counter(c); position: absolute; left: 14px; top: 12px;
+  font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 16px; color: var(--blue);
+}
+.circle-grid li strong { display: block; color: var(--navy); }
+.circle-grid li span { font-size: 11.5px; color: var(--gray-2); }
+
+.cust-table-wrap { overflow-x: auto; }
+.cust-table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 520px; }
+.cust-table th { text-align: left; font-size: 11px; color: var(--gray-2); font-weight: 500; padding: 6px 8px; border-bottom: 2px solid var(--navy); }
+.cust-table td { padding: 10px 8px; border-bottom: 1px solid var(--gray-3); vertical-align: top; line-height: 1.6; }
+.cust-table td:first-child { font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--blue); }
+.cust-table td:nth-child(2) { font-weight: 700; color: var(--navy); width: 30%; }
+.cust-table td:last-child { white-space: nowrap; color: var(--gray-2); }
+
+@media (max-width: 700px) {
+  .sheet { padding-left: 20px; padding-right: 20px; }
+  .sheet-nav { padding: 10px 20px; }
+  .sheet-rows > div { grid-template-columns: 1fr; gap: 2px; }
+  .gains-grid, .circle-grid { grid-template-columns: 1fr; }
+  .qa > li { padding-left: 38px; }
+}
 </style>
 </head>
 <body>
@@ -569,7 +677,7 @@ body {
 <section class="hero">
   <div class="hero-left">
     <div class="hero-photo">
-      <img src="images/profile.png" alt="清水勝紀">
+      <img src="images/profile-2026.jpg" alt="清水勝紀">
     </div>
     <p class="hero-script">Shimizu Katsunori</p>
     <h1 class="hero-name">清水 勝紀</h1>
@@ -577,300 +685,377 @@ body {
       <img class="pin" src="assets/04_icons_line/basic/01-pin.svg" alt="">
       <span>出身地：東雲</span>
       <span class="sep">|</span>
-      <span>居住地：<strong>日本橋</strong>（居住6ヶ月）</span>
+      <span>居住地：<strong>日本橋</strong></span>
     </div>
     <div class="hero-catch">
-      <h2>AI × 業務効率化で、<br>中小企業の<em>未来を変える</em></h2>
-      <p class="hero-catch-sub">システム開発とAIコンサルティングで、<br>現場の課題を解決します</p>
+      <h2>苦手はAIに任せて、<br><em>やりたいこと</em>に挑戦を</h2>
+      <p class="hero-catch-sub">経営者ご自身が自社専用ツールを<br>作れるようになるまで、<br>マンツーマンで伴走します</p>
     </div>
   </div>
   <div class="hero-right">
     <div class="about-box">
-      <div class="about-box-title">ABOUT ME</div>
-      <div class="ab-item">
-        <div class="ab-label">
-          <span class="ab-icon"><img src="assets/05_icons/bottom-04-tent.svg" alt=""></span>
-          趣味
-        </div>
-        <div class="ab-detail">
-          <strong>キャンプ</strong><br>
-          夏以外は月1回ほど行っています<br>
-          富士山の富士五湖周辺が好きです
-        </div>
-      </div>
-      <div class="ab-item">
-        <div class="ab-label">
-          <span class="ab-icon"><img src="assets/05_icons/bottom-06-onsen.svg" alt=""></span>
-          サウナ
-        </div>
-        <div class="ab-detail">サウナ東京よかったです</div>
-      </div>
-      <div class="ab-item">
-        <div class="ab-label">
-          <span class="ab-icon"><img src="assets/05_icons/bottom-05-dumbbell.svg" alt=""></span>
-          関心事
-        </div>
-        <div class="ab-detail">
-          <strong>筋トレ</strong><br>
-          最近筋トレ再開しました<br>
-          <strong>ダイエット</strong><br>
-          絶賛ダイエット中です
-        </div>
-      </div>
+      <div class="about-box-title">AT A GLANCE</div>
+      <div class="glance"><div class="glance-l">事業名</div><div class="glance-v">AIを活用した業務効率化サポート<br><small>SKテックラボ／2025年4月創業</small></div></div>
+      <div class="glance"><div class="glance-l">やっていること</div><div class="glance-v">経営者ご自身が、AIで自社専用の業務ツールを作れるようになるまでのマンツーマン伴走</div></div>
+      <div class="glance"><div class="glance-l">実績</div><div class="glance-v">経営者の方から<strong class="num">300</strong>件以上のご相談<br><small>建設・民泊・不動産・観光など</small></div></div>
+      <div class="glance"><div class="glance-l">ご紹介いただきたい方</div><div class="glance-v">社員15〜80名の会社の社長／紙・Excel・LINEで業務を回している会社の経営者</div></div>
+      <div class="glance"><div class="glance-l">BNI</div><div class="glance-v">2025年9月5日入会</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SERVICE ═══ -->
-<section class="svc-section">
+<!-- ═══ SHEET NAV ═══ -->
+<nav class="sheet-nav">
+  <a href="#ryakureki">略歴</a>
+  <a href="#gains">G.A.I.N.S.</a>
+  <a href="#power">Power 1to1</a>
+  <a href="#circle">コンタクトサークル</a>
+  <a href="#levelup">レベルアップ</a>
+  <a href="#kyogyo">協業創出</a>
+  <a href="#customers">直近10件の顧客</a>
+</nav>
+
+<!-- ═══ メンバー略歴シート ═══ -->
+<section class="sheet" id="ryakureki">
   <div class="sec-head">
-    <h2>SERVICE</h2>
-    <span class="sub">専門分野・サービス内容</span>
+    <h2>MEMBER PROFILE</h2>
+    <span class="sub">メンバー略歴シート</span>
   </div>
-  <div class="svc-grid">
-    <div class="svc-card">
-      <div class="svc-card-head">
-        <div class="svc-circle">
-          <img src="assets/04_icons_line/category/01-lightbulb.svg" alt="">
-        </div>
-        <h3>AIコンサルティング</h3>
-      </div>
+
+  <h3 class="sheet-group">ビジネスについて</h3>
+  <dl class="sheet-rows">
+    <div><dt>事業名</dt><dd><strong>AIを活用した業務効率化サポート</strong>（屋号：SKテックラボ）</dd></div>
+    <div><dt>専門分野</dt><dd>
       <ul>
-        <li>AI活用余地の診断</li>
-        <li>業務改善・自動化の提案</li>
-        <li>現場目線でのフロー改善</li>
+        <li><strong>Claude Code伴走支援</strong>（個人事業主・経営者の方向け）<br>マンツーマンで、経営者ご自身が自社専用の業務ツールを作れるようになるまでご一緒します。プログラミング経験は不要です</li>
+        <li><strong>AI実行支援顧問</strong>（法人の方向け）<br>売上アップ・コスト削減の打ち手を、要件整理から仕上げまで一緒に手を動かして実行します</li>
+        <li><strong>事業見直し診断</strong>（社員15〜80名の会社の社長向け）<br>45分お話しいただくだけで、「人を増やさず売上を伸ばす一手」を金額付きでお渡しします</li>
+        <li><strong>企業向けAI研修・システム開発</strong></li>
       </ul>
-      <div class="svc-illust">
-        <img src="assets/05_icons/top-01-target.svg" alt="">
-        <img src="assets/04_icons_line/basic/07-laptop.svg" alt="">
-        <img src="assets/05_icons/top-03-megaphone.svg" alt="">
-      </div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-card-head">
-        <div class="svc-circle">
-          <img src="assets/04_icons_line/category/02-wrench.svg" alt="">
-        </div>
-        <h3>システム開発</h3>
-      </div>
+    </dd></div>
+    <div><dt>所在地</dt><dd>東京（日本橋）</dd></div>
+    <div><dt>経験年数</dt><dd>エンジニア歴5年／2025年4月1日創業</dd></div>
+    <div><dt>過去に経験した職業</dt><dd>システムエンジニア（事業会社2社）／訪問販売・テレアポの営業</dd></div>
+  </dl>
+
+  <h3 class="sheet-group">個人的な情報</h3>
+  <dl class="sheet-rows">
+    <div><dt>家族について</dt><dd>6人家族（兄3人の末っ子）<br>長男：8つ上／次男：6つ上／三男：3つ上<br>毎年1回、兄弟で旅行代を持って家族旅行に行っています</dd></div>
+    <div><dt>配偶者</dt><dd>なし</dd></div>
+    <div><dt>経験</dt><dd>
       <ul>
-        <li>予約管理システム</li>
-        <li>請求管理システム</li>
-        <li>CRM（顧客管理）</li>
-        <li>業務自動化ツール開発</li>
+        <li>訪問販売・テレアポの営業</li>
+        <li>ポイントシステムの構築（楽天ポイントやAmazonポイントのような仕組み）</li>
+        <li>ガチャシステムの構築（アクセスが集中しても止まらない設計）</li>
+        <li>人材管理システムの構築</li>
+        <li>ツアー会社の予約管理システムの構築</li>
+        <li>請求書管理システムの構築</li>
+        <li>セミナー登壇 約50回／大学での特別講師</li>
       </ul>
-      <div class="svc-illust">
-        <img src="assets/04_icons_line/feature/02-wrench.svg" alt="">
-        <img src="assets/04_icons_line/category/06-doc_check.svg" alt="">
-        <img src="assets/04_icons_line/feature/03-chart-growth.svg" alt="">
-      </div>
-    </div>
-  </div>
-  <div class="info-bar">
-    <div class="info-cell">
-      <div class="info-dot">
-        <img src="assets/04_icons_line/basic/01-pin.svg" alt="">
-      </div>
-      <div>
-        <div class="info-label">所在地</div>
-        <div class="info-val">東京（日本橋）</div>
-      </div>
-    </div>
-    <div class="info-cell">
-      <div class="info-dot">
-        <img src="assets/04_icons_line/basic/02-calendar.svg" alt="">
-      </div>
-      <div>
-        <div class="info-label">事業開始</div>
-        <div class="info-val">2025年4月1日創業</div>
-      </div>
-    </div>
-    <div class="info-cell">
-      <div class="info-dot">
-        <img src="assets/04_icons_line/basic/03-person.svg" alt="">
-      </div>
-      <div>
-        <div class="info-label">経験年数</div>
-        <div class="info-val">4年（システムエンジニアとして）</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </dd></div>
+    <div><dt>趣味</dt><dd><strong>キャンプ</strong>：夏以外は月1回ほど。富士五湖周辺が好きです<br><strong>サウナ</strong>：サウナ東京がお気に入りです</dd></div>
+    <div><dt>その他の関心事</dt><dd>筋トレ・ダイエット／ドライブ（免許を取ってからハマっています）</dd></div>
+    <div><dt>出身地</dt><dd>東京（東雲）</dd></div>
+    <div><dt>居住地</dt><dd>日本橋</dd></div>
+    <div><dt>居住年数</dt><dd>約1年</dd></div>
+  </dl>
 
-<!-- ═══ EXPERIENCE ═══ -->
-<section class="exp-section">
-  <div class="sec-head">
-    <h2>EXPERIENCE &amp; ACHIEVEMENTS</h2>
-    <span class="sub">実績・経験</span>
-  </div>
-  <div class="exp-grid">
-    <div class="exp-card">
-      <div class="exp-card-head">
-        <div class="exp-badge">
-          <img src="assets/04_icons_line/basic/08-building.svg" alt="">
-        </div>
-        <h4>大規模システム開発</h4>
-      </div>
-      <p>大手企業向けポイント基盤の開発・運用（数百万人規模）<br>ガチャシステム開発（高負荷対応）</p>
-      <div class="exp-illust">
-        <img src="assets/05_icons/top-05-trophy.svg" alt="">
-        <img src="assets/04_icons_line/basic/07-laptop.svg" alt="">
-      </div>
-    </div>
-    <div class="exp-card">
-      <div class="exp-card-head">
-        <div class="exp-badge">
-          <img src="assets/04_icons_line/feature/03-chart-growth.svg" alt="">
-        </div>
-        <h4>業務改善システム</h4>
-      </div>
-      <p>派遣会社向けCRMをリリース（現場の業務改善を最重視）<br>請求書管理システムを開発</p>
-      <div class="exp-illust">
-        <img src="assets/04_icons_line/category/06-doc_check.svg" alt="">
-        <img src="assets/04_icons_line/category/05-people.svg" alt="">
-      </div>
-    </div>
-    <div class="exp-card">
-      <div class="exp-card-head">
-        <div class="exp-badge">
-          <img src="assets/04_icons_line/basic/02-calendar.svg" alt="">
-        </div>
-        <h4>ツアー会社向け<br>予約管理システム</h4>
-      </div>
-      <p>Spreadsheet × Google Calendar 自動連携<br>予約管理工数を大幅削減</p>
-      <div class="exp-illust">
-        <img src="assets/04_icons_line/category/04-calendar.svg" alt="">
-        <img src="assets/04_icons_line/basic/06-globe.svg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ABOUT ME (values) ═══ -->
-<section class="val-section">
-  <div class="sec-head">
-    <h2>ABOUT ME</h2>
-    <span class="sub">価値観・内面</span>
-  </div>
-  <div class="val-content">
-    <div>
-      <div class="val-item">
-        <div class="val-dot">
-          <img src="assets/04_icons_line/feature/07-target.svg" alt="">
-        </div>
-        <div>
-          <h4>強い願望</h4>
-          <p>中小企業がもっと気軽にAIを使える社会をつくる<br>単純作業から人を解放し、価値ある仕事に集中できる世界へ</p>
-        </div>
-      </div>
-      <div class="val-item">
-        <div class="val-dot">
-          <img src="assets/04_icons_line/feature/06-key.svg" alt="">
-        </div>
-        <div>
-          <h4>成功の鍵</h4>
-          <p>お客様の目線に立ち、<br>本当に使いやすい仕組みを作ること</p>
-        </div>
-      </div>
-      <div class="val-item">
-        <div class="val-dot">
-          <img src="assets/04_icons_line/feature/08-people.svg" alt="">
-        </div>
-        <div>
-          <h4>誰も知らない私</h4>
-          <p>・キャンプ好きだけど虫が苦手<br>・昔ダンスをやっていた</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="photo-mosaic">
-        <div class="photo-tile tall">
-          <div class="photo-placeholder ph-camp">
-            <img src="assets/05_icons/bottom-04-tent.svg" alt="">
-          </div>
-        </div>
-        <div class="photo-tile">
-          <div class="photo-placeholder ph-sauna">
-            <img src="assets/05_icons/bottom-06-onsen.svg" alt="">
-          </div>
-        </div>
-        <div class="photo-tile">
-          <div class="photo-placeholder ph-drive">
-            <img src="assets/05_icons/bottom-02-car.svg" alt="">
-          </div>
-        </div>
-      </div>
-      <p class="lifestyle-script">lifestyle</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ NETWORKS ═══ -->
-<section class="net-section">
-  <div class="sec-head">
-    <h2>NETWORKS &amp; INTRODUCTIONS</h2>
-    <span class="sub">人脈・つながりたい方</span>
-  </div>
-  <div class="net-layout">
-    <div class="net-existing">
-      <h4>
-        <img src="assets/04_icons_line/basic/04-mail.svg" alt="">
-        既にある人脈
-      </h4>
+  <h3 class="sheet-group">その他</h3>
+  <dl class="sheet-rows">
+    <div><dt>私の強い願望は</dt><dd>経営者・従業員が苦手なことをAIに任せ、本当にやりたかったことに挑戦できる社会をつくること</dd></div>
+    <div><dt>誰も知らない私</dt><dd>
       <ul>
-        <li>システムエンジニア / SES / エンジニアコミュニティ</li>
-        <li>AI事業者 / Web制作・広告関係 / SNSマーケター</li>
+        <li>キャンプ好きですが、実は虫が苦手です</li>
+        <li>昔、ダンスをやっていました</li>
+        <li>文系出身で、プログラミングは独学です。最初の準備だけで100時間かかりました</li>
+      </ul>
+    </dd></div>
+    <div><dt>私の成功の鍵は</dt><dd>技術者の言葉ではなく、経営者・現場の言葉で話すこと。<br>答えを渡すのではなく、ご自身で進められるところまでご一緒すること</dd></div>
+  </dl>
+</section>
+
+<!-- ═══ G.A.I.N.S. ═══ -->
+<section class="sheet sheet-dark" id="gains">
+  <div class="sec-head">
+    <h2>G.A.I.N.S.</h2>
+    <span class="sub">G.A.I.N.S.ワークシート</span>
+  </div>
+  <div class="gains-grid">
+    <div class="gains-card">
+      <div class="gains-letter">G</div>
+      <h4>Goals <span>目標</span></h4>
+      <p><strong>1年後</strong></p>
+      <ul><li>法人化</li><li>伴走支援を毎月8件お受けできる体制にする</li></ul>
+      <p><strong>3年後</strong></p>
+      <ul><li>自分が案件対応に入らなくても事業が回る状態</li><li>都心と自然の二拠点生活</li></ul>
+      <p><strong>ありたい姿</strong></p>
+      <ul><li>「苦手はAIに任せて、やりたいことに挑戦する」経営者を増やし続ける人</li></ul>
+    </div>
+    <div class="gains-card">
+      <div class="gains-letter">A</div>
+      <h4>Accomplishments <span>実績</span></h4>
+      <ul>
+        <li>経営者の方から300件以上のご相談</li>
+        <li>建設業（14名規模）：2〜3ヶ月遅れだった利益の把握が当月中に。年間200〜300万円規模の効果見込み</li>
+        <li>民泊運営代行（140物件）：4〜5時間かかっていた価格調整が一瞬で完了</li>
+        <li>外注費が年間120万円以上減った方も</li>
+        <li>いずれのお客様も、ご自身ではプログラムを1行も書いていません</li>
+        <li>大手企業のポイント基盤（数百万人規模）の開発・運用</li>
+        <li>初開催のセミナーに84名ご参加（チャプターの皆さまのおかげです）</li>
       </ul>
     </div>
-    <div class="wanted-area">
-      <div class="wanted-head">つながりたい業界・企業</div>
-      <div class="wanted-grid">
-        <div class="w-card">
-          <div class="w-icon">
-            <img src="assets/04_icons_line/basic/07-laptop.svg" alt="">
-          </div>
-          <h5>デジタル・IT系</h5>
-          <p>Web制作・広告・開発会社<br>AI事業者</p>
-        </div>
-        <div class="w-card">
-          <div class="w-icon">
-            <img src="assets/04_icons_line/feature/04-handshake.svg" alt="">
-          </div>
-          <h5>専門サービス</h5>
-          <p>補助金コンサル<br>（税理士・コンサル）<br>情シス不在の中小企業</p>
-        </div>
-        <div class="w-card">
-          <div class="w-icon">
-            <img src="assets/04_icons_line/basic/08-building.svg" alt="">
-          </div>
-          <h5>アナログ文化が<br>残る業界</h5>
-          <p>建設・不動産<br>（紙・FAX文化が強い）<br>業務が紙&amp;Excel中心の会社</p>
-        </div>
-        <div class="w-card">
-          <div class="w-icon">
-            <img src="assets/04_icons_line/category/03-chart_growth.svg" alt="">
-          </div>
-          <h5>サービス・製造業</h5>
-          <p>在庫・シフト管理が煩雑な小売・飲食<br>予約管理や問い合わせが多い旅行・サービス業<br>物流・製造・介護・医療など</p>
-        </div>
-      </div>
+    <div class="gains-card">
+      <div class="gains-letter">I</div>
+      <h4>Interests <span>興味</span></h4>
+      <ul>
+        <li>新しい場所に行くこと</li>
+        <li>ドライブ（免許を取ってから、いろいろな場所を見て回っています）</li>
+        <li>キャンプ・サウナ</li>
+        <li>自分と違う背景を持つ方のお話を聞くこと</li>
+      </ul>
+    </div>
+    <div class="gains-card">
+      <div class="gains-letter">N</div>
+      <h4>Networks <span>人脈</span></h4>
+      <p><strong>現在ある人脈</strong></p>
+      <ul>
+        <li>システムエンジニア／エンジニア派遣会社／エンジニアコミュニティ運営者</li>
+        <li>AI事業をされている方</li>
+        <li>Web制作・広告・SNSマーケティングの方</li>
+        <li>建設・宿泊（民泊）・不動産の経営者</li>
+      </ul>
+      <p><strong>求めている人脈</strong></p>
+      <ul>
+        <li>★ 社員15〜80名の会社の社長</li>
+        <li>★ 建設業・不動産業（書類・FAX・紙が多い）</li>
+        <li>★ 補助金に詳しい方（補助金コンサルタント・税理士・社労士）</li>
+        <li>★ Web制作・広告・システム開発会社</li>
+        <li>小売・飲食（在庫やシフト管理が大変）／旅行・サービス業</li>
+      </ul>
+    </div>
+    <div class="gains-card">
+      <div class="gains-letter">S</div>
+      <h4>Skills <span>スキル</span></h4>
+      <ul>
+        <li>AIで業務を自動化する仕組みづくり</li>
+        <li>予約管理・請求書管理・顧客管理システムの構築</li>
+        <li>難しい話を、経営者・現場の言葉に置き換えて伝えること</li>
+        <li>プログラミング全般</li>
+      </ul>
+      <p><strong>パーソナルスキル</strong></p>
+      <ul><li>ダンス</li><li>つまずいている方のそばで、折れずに最後までご一緒すること</li></ul>
+    </div>
+    <div class="gains-card">
+      <div class="gains-letter">例</div>
+      <h4>こんなお悩みを解決できます</h4>
+      <ul>
+        <li>議事録を作るのが大変 → 自動で議事録と次のタスクを作成</li>
+        <li>問い合わせ対応に追われる → 自動応答・メールの自動仕分け</li>
+        <li>請求書・領収書のチェックが大変 → PDFを読み取って自動で仕分け</li>
+        <li>採用の書類選考が大変 → 履歴書を自動で読み取って整理</li>
+        <li>営業メールを毎回書くのが大変 → 下書きを自動作成</li>
+      </ul>
     </div>
   </div>
+</section>
+
+<!-- ═══ Power 1to1 ═══ -->
+<section class="sheet" id="power">
+  <div class="sec-head">
+    <h2>POWER 1to1</h2>
+    <span class="sub">Power 1to1シート／1to1シート</span>
+  </div>
+  <ol class="qa">
+    <li><h4>氏名</h4><p>清水 勝紀（しみず かつのり）</p></li>
+    <li><h4>会社名または屋号</h4><p>SKテックラボ</p></li>
+    <li><h4>専門分野、中心的なサービス</h4><p>経営者ご自身が、AI（Claude Code）を使って自社専用の業務ツールを作れるようになるまでの、マンツーマン伴走支援です。法人の方には、売上アップ・コスト削減の打ち手を一緒に実行する「AI実行支援顧問」をご提供しています。</p></li>
+    <li><h4>他社にない強み（USP）</h4>
+      <ul>
+        <li><strong>納品して終わりではありません。</strong>お客様ご自身が作り方を覚えるので、その後の修正や機能追加に外注費がかかりません</li>
+        <li><strong>初回から、実際の業務で使う本物のツールを題材にします。</strong>勉強のための勉強はしません</li>
+        <li>文系出身・独学で人一倍つまずいてきたので、<strong>パソコンが苦手な方のつまずきどころが分かります</strong></li>
+        <li>建設・民泊・不動産・観光など、<strong>IT以外の業種での事例</strong>が中心です</li>
+      </ul>
+    </li>
+    <li><h4>どんな人を紹介すれば、良いお客様になりそうですか？</h4>
+      <ul>
+        <li>社員15〜80名ほどの会社の社長で、「採用が難しい」「人が辞める」「あの人にしかできない仕事がある」とおっしゃっている方</li>
+        <li>紙・Excel・LINE・記憶で業務を回している会社の経営者（建設・不動産・宿泊・観光・小売・飲食など）</li>
+        <li>外注費やツールの月額費用を減らしたい個人事業主・ひとり社長</li>
+        <li>「AIを使いたいが、何から始めればいいか分からない」とおっしゃっている方</li>
+      </ul>
+    </li>
+    <li><h4>あなたについて、どう会話を切り出したら良いですか？</h4>
+      <div class="talk">「今の人数のまま、売上を伸ばすことに興味ありますか？」</div>
+      <div class="talk">「1時間しゃべるだけで、その“一手”を見つけてくれる人がいるんです」</div>
+      <div class="talk">「プログラミングができなくても、自社専用のツールを自分で作れるように教えてくれる人がいますよ。建設会社の社長さんも、自分で利益管理のツールを作っていました」</div>
+    </li>
+  </ol>
+</section>
+
+<!-- ═══ コンタクトサークル ═══ -->
+<section class="sheet sheet-pale" id="circle">
+  <div class="sec-head">
+    <h2>CONTACT SPHERE</h2>
+    <span class="sub">コンタクトサークル（お互いにご紹介を出し合える業種）</span>
+  </div>
+  <ol class="circle-grid">
+    <li><strong>税理士・会計事務所</strong><span>顧問先の社長の「数字が見えない」というお悩みに</span></li>
+    <li><strong>社会保険労務士</strong><span>人手不足・勤怠や給与まわりの手作業に</span></li>
+    <li><strong>補助金・助成金コンサルタント</strong><span>AI研修・ツール導入の費用を抑えたい方に</span></li>
+    <li><strong>経営コンサルタント・中小企業診断士</strong><span>打ち手は決まったが、実行する人がいない会社に</span></li>
+    <li><strong>Web制作・ホームページ制作会社</strong><span>サイトの先の予約・顧客管理のご相談に</span></li>
+    <li><strong>広告運用・SNSマーケティング</strong><span>集客後の問い合わせ対応・追客の自動化に</span></li>
+    <li><strong>システム開発会社・エンジニア派遣会社</strong><span>規模が合わずお断りしている小さなご相談に</span></li>
+    <li><strong>オンライン秘書・事務代行</strong><span>繰り返しの事務作業を仕組みにしたい会社に</span></li>
+    <li><strong>採用支援・人材紹介</strong><span>採用できない分を、仕組みで補いたい会社に</span></li>
+    <li><strong>OA機器・通信・ITサポート</strong><span>社内にITに詳しい人がいない会社に</span></li>
+  </ol>
+</section>
+
+<!-- ═══ 1to1レベルアップシート ═══ -->
+<section class="sheet" id="levelup">
+  <div class="sec-head">
+    <h2>LEVEL UP</h2>
+    <span class="sub">1to1レベルアップシート</span>
+  </div>
+  <ol class="qa">
+    <li><h4>あなたのクライアントTOP3は誰ですか？</h4>
+      <ul>
+        <li>建設会社（塗装・防水工事／14名規模）の社長</li>
+        <li>民泊運営代行会社（140物件以上）の社長</li>
+        <li>不動産会社（十数名のエージェントを抱える）の社長</li>
+      </ul>
+    </li>
+    <li><h4>クライアントは、あなたのなにが良いと考えていますか？</h4>
+      <ul>
+        <li>初心者でも分かるように、画面を見ながら一つずつ丁寧に進めてくれる</li>
+        <li>回を重ねるごとに、自分でできることが増えていく</li>
+        <li>「これは自分じゃなくても、誰でもできるな」と言える状態まで仕上がる</li>
+        <li>分からないことを、期間中いつでもチャットで聞ける</li>
+      </ul>
+    </li>
+    <li><h4>あなたの「ターゲット」クライアントのTOP3をあげてください。</h4>
+      <ul>
+        <li>社員15〜80名・売上2〜10億円ほどの中小企業の社長</li>
+        <li>建設・不動産・宿泊など、紙やExcelの手作業が多い会社の経営者</li>
+        <li>外注費を減らして、自分で仕組みを作りたい個人事業主・ひとり社長</li>
+      </ul>
+    </li>
+    <li><h4>見込み客にあなたを紹介するもっともよい方法を教えて下さい。</h4>
+      <p>「準備はいりません。45分しゃべるだけで、御社の伸びしろを金額付きで整理してくれる人がいます。売り込みは一切ないそうです」とお伝えいただき、3人のグループLINEやメッセンジャーでおつなぎいただけると一番スムーズです。</p>
+    </li>
+    <li><h4>あなたにビジネスの機会を紹介してくれる人（紹介者）は誰ですか？</h4>
+      <ul>
+        <li>BNIのメンバーの皆さま</li>
+        <li>伴走支援を受けてくださったお客様（お客様が次のお客様をご紹介くださることが多いです）</li>
+        <li>友人・エンジニア時代の仲間</li>
+      </ul>
+    </li>
+    <li><h4>あなたのこれまでのベストリファーラルはどのようにして出ましたか？</h4>
+      <p>BNIでのご縁から、建設会社の社長をご支援しました。その社長が成果をチャプターの場で話してくださり、さらに自社の職人さんもご紹介くださいました。「お客様が成果を実感する → ご自身の言葉で周りに話してくださる」という流れが、一番良いご紹介につながっています。</p>
+    </li>
+    <li><h4>あなたにリファーラルを提供するために、私は何を観て、何を聴くべきですか？</h4>
+      <div class="talk">「人が採れない」「また辞めちゃって」</div>
+      <div class="talk">「あの人が休むと仕事が止まる」「自分が現場を抜けられない」</div>
+      <div class="talk">「Excelがぐちゃぐちゃ」「転記ばかりで1日終わる」</div>
+      <div class="talk">「試算表が出てくるのが遅くて、今月の利益が分からない」</div>
+      <div class="talk">「システム会社に見積もりを取ったら高すぎた」「AI、うちも何かやらないと」</div>
+    </li>
+  </ol>
+</section>
+
+<!-- ═══ 1to1協業創出 ═══ -->
+<section class="sheet sheet-pale" id="kyogyo">
+  <div class="sec-head">
+    <h2>COLLABORATION</h2>
+    <span class="sub">1to1協業＆パワーチーム創出シート</span>
+  </div>
+  <ol class="qa">
+    <li><h4>ビジネスを始めたきっかけは何ですか？</h4><p>文系の大学3年のとき、独学でプログラミングを始めました。聞ける人がおらず、最初の準備だけで100時間かかりました。「そばで伴走してくれる人がいれば、全然違った」という実感が、今のサービスの原点です。独立後にAI（Claude Code）と出会い、苦手だったセミナー登壇や発信にも挑戦できるようになりました。同じ変化を経営者の方にも届けたいと思い、伴走支援を始めました。</p></li>
+    <li><h4>あなたのお仕事のやりがいは何ですか？</h4><p>パソコンが苦手だとおっしゃっていた社長が、ご自身の手でツールを動かして「これ、自分で作ったんだよ」と嬉しそうに話してくださる瞬間です。</p></li>
+    <li><h4>競合他社からあなたを差別化する点を教えてください。</h4>
+      <ul>
+        <li>システム開発会社との違い：納品して終わりではなく、お客様ご自身が作れるようになることがゴールです</li>
+        <li>プログラミングスクールとの違い：初回から、実際の業務で使う本物のツールを作ります</li>
+        <li>AIの情報発信をされている方との違い：建設・民泊・不動産など、現場での支援事例が積み上がっています</li>
+      </ul>
+    </li>
+    <li><h4>同じビジネスを始める人にアドバイスをするとしたら、何を伝えますか？</h4><p>自分が答えを出した方が早い場面でも、ぐっとこらえること。必要なところだけ口を出して、お客様がご自身で進められる状態を残すことが一番の価値だとお伝えします。</p></li>
+    <li><h4>あなたのビジネスまたは業界における、今後の動向を教えてください。</h4><p>これまでシステム会社に数百万円かけて作っていたものが、社内の一人が数十万円の範囲で作れる時代になってきています。「外に頼む」から「自社で作って育てる」への流れは、中小企業でこそ進むと考えています。</p></li>
+    <li><h4>あなたのビジネスを宣伝する上で、最も効果的と思われる戦略を教えてください。</h4><p>ご紹介です。本命の伴走支援は、これまですべてご紹介からのご成約です。目に見えないサービスなので、成果を実感されたお客様がご自身の言葉で話してくださることが、一番伝わります。</p></li>
+    <li><h4>あなたのビジネス、業界で、できることなら変えたいと思う点を挙げてください。</h4><p>「ITは難しいもの」「分からないから言い値で任せるしかない」という状況です。技術が分からないことと、経営判断ができないことは別の話です。経営者の方が、ご自身の言葉のままで仕組みを作れる状態にしたいです。</p></li>
+    <li><h4>あなたが次に迎える大きなイベントを教えてください。</h4><p>法人化と、法人のお客様向けサービス（AI実行支援顧問・事業見直し診断）の本格スタートです。</p></li>
+    <li><h4>現在あなたが抱えている最大の課題は何ですか？</h4><p>法人のお客様との接点づくりです。これまでは個人事業主・小規模の経営者の方が中心でした。社員15〜80名ほどの会社の社長とお会いできる機会を増やしたいと考えています。</p></li>
+    <li><h4>どのようなタイプの顧客を探していますか？見込み客の見分け方と、具体的なニーズを教えてください。</h4>
+      <ul>
+        <li><strong>見分け方</strong>：「人が採れない」「あの人にしかできない」「Excelと紙ばかり」という言葉が出る会社。社内にITに詳しい人がいない会社</li>
+        <li><strong>ニーズ</strong>：今の人数のまま売上を伸ばしたい／誰かが辞めても仕事が止まらないようにしたい／今月の利益をすぐ知りたい／外注費を減らしたい</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<!-- ═══ 直近10件顧客リスト ═══ -->
+<section class="sheet" id="customers">
+  <div class="sec-head">
+    <h2>LAST 10 CUSTOMERS</h2>
+    <span class="sub">直近10件の顧客リスト（お名前は伏せて業種で記載しています）</span>
+  </div>
+  <div class="cust-table-wrap">
+  <table class="cust-table">
+    <thead><tr><th>#</th><th>お客様</th><th>ご提供したもの</th><th>きっかけ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>観光・ツアーガイド業（石垣島）</td><td>予約と売上の照合の自動化、口コミ対応、社内用チャットボット</td><td>ご紹介</td></tr>
+      <tr><td>2</td><td>電話占い（個人）</td><td>1分単位で自動課金できる独自の通話・決済の仕組み</td><td>ご紹介</td></tr>
+      <tr><td>3</td><td>個人事業主（サロン運営）</td><td>会社のホームページ、会員サイト、セミナー集客の導線</td><td>ご紹介</td></tr>
+      <tr><td>4</td><td>新規事業（ポイントサービス）</td><td>投資家向けのデモアプリ</td><td>ご紹介</td></tr>
+      <tr><td>5</td><td>IT・DXコンサルティング会社</td><td>事業内容の言語化と事業計画書の作成</td><td>ご紹介</td></tr>
+      <tr><td>6</td><td>不動産会社（営業チーム3名）</td><td>お問い合わせへの初回対応・追客の自動化</td><td>ご紹介</td></tr>
+      <tr><td>7</td><td>民泊・宿泊運営</td><td>宿泊者向けアクセスガイドの自動作成</td><td>ご紹介</td></tr>
+      <tr><td>8</td><td>防音室ビジネス</td><td>見積もりの自動計算、サイト運営の自動化</td><td>ご紹介</td></tr>
+      <tr><td>9</td><td>塗装・防水の職人</td><td>施工写真の管理ツール（写真台帳）</td><td>お客様からのご紹介</td></tr>
+      <tr><td>10</td><td>不動産会社（社長）</td><td>物件管理の「対応が止まっている案件」の自動検知・通知</td><td>お客様からのご紹介（BNI）</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 class="sheet-group">過去の顧客10件についてのメモ</h3>
+  <dl class="sheet-rows">
+    <div><dt>どのようにして来られたか</dt><dd>ほぼすべてご紹介です（BNIメンバー・友人・お客様からのご紹介）。お客様が次のお客様をご紹介くださるケースが多いです</dd></div>
+    <div><dt>ご提供したもの</dt><dd>マンツーマンの伴走支援。業種はばらばらですが、「紙・Excel・LINE・記憶で回していた手作業を、自社専用のツールに置き換える」という点が共通しています</dd></div>
+    <div><dt>平均的な顧客か</dt><dd>はい。プログラミング経験のない経営者・現場責任者の方が平均的なお客様です</dd></div>
+  </dl>
+
+  <h3 class="sheet-group">リファーラルについてのメモ</h3>
+  <dl class="sheet-rows">
+    <div><dt>その他のリファーラル提供者</dt><dd>税理士・社労士など、中小企業の社長と日常的にお話しされる方／伴走支援を受けてくださったお客様</dd></div>
+    <div><dt>「質の高い」リファーラル</dt><dd>
+      <ul>
+        <li>決裁できるご本人（社長・事業責任者）</li>
+        <li>具体的な困りごとが1つある（例：「毎月の請求書の転記が大変」）</li>
+        <li>「一度話を聞いてみたい」と、ご本人が了承されている</li>
+      </ul>
+    </dd></div>
+    <div><dt>「不適切な」リファーラル</dt><dd>
+      <ul>
+        <li>「とにかく安く作ってほしい」という、価格だけが決め手のご依頼</li>
+        <li>ご本人も社内の方も、まったく手を動かすおつもりがない場合</li>
+        <li>会社員の方の、個人的なプログラミング学習のご相談</li>
+      </ul>
+    </dd></div>
+  </dl>
 </section>
 
 <!-- ═══ CTA FOOTER ═══ -->
 <footer class="cta-footer">
   <div>
-    <p class="cta-lead">AI活用や業務効率化でお困りのことがあれば、</p>
-    <p class="cta-title">いつでもお気軽にご相談ください！</p>
+    <p class="cta-lead">「この人に合いそう」という方がいらっしゃれば、</p>
+    <p class="cta-title">ぜひおつなぎいただけますと幸いです</p>
     <div class="cta-contacts">
-      <a href="#">
-        <img src="assets/04_icons_line/basic/04-mail.svg" alt="">
-        shimizu.katsunori@example.com
-      </a>
-      <a href="#">
-        <img src="assets/04_icons_line/basic/05-phone.svg" alt="">
-        090-1234-5678
+      <a href="https://sk-techlab.com/" target="_blank" rel="noopener">
+        <img src="assets/04_icons_line/basic/06-globe.svg" alt="">
+        sk-techlab.com（お問い合わせはこちら）
       </a>
     </div>
   </div>
