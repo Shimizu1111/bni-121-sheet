@@ -571,21 +571,58 @@ body {
 .glance-v small { font-size: 11px; color: var(--gray-2); }
 .glance-v .num { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 700; color: var(--navy); margin: 0 2px; }
 
-.sheet-nav {
-  position: sticky; top: 0; z-index: 10;
-  display: flex; gap: 6px; overflow-x: auto;
-  padding: 10px 40px; background: var(--white);
-  border-bottom: 1px solid var(--gray-3);
-  -webkit-overflow-scrolling: touch;
-}
-.sheet-nav a {
-  flex: none; font-size: 12px; font-weight: 500; color: var(--navy);
-  text-decoration: none; padding: 4px 12px; border-radius: 999px;
-  background: var(--gray-4); white-space: nowrap;
-}
-.sheet-nav a:hover { background: var(--pale); }
+.chat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.chat-item { background: var(--white); border: 1px solid var(--gray-3); border-radius: 10px; padding: 10px 12px; line-height: 1.5; }
+.chat-k { display: block; font-size: 10px; font-weight: 700; color: var(--blue); }
+.chat-item strong { display: block; font-size: 14px; color: var(--navy); }
+.chat-item small { font-size: 11px; color: var(--gray-2); }
+.chat-meta { font-size: 11px; color: var(--gray-2); margin-top: 12px; }
 
-.sheet { padding: 36px 40px 32px; background: var(--white); scroll-margin-top: 48px; }
+.quick { padding: 40px 40px 36px; background: var(--white); }
+.quick-eyebrow { font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: 0.04em; margin-bottom: 10px; }
+.quick-main { font-size: 23px; font-weight: 900; color: var(--navy); line-height: 1.6; margin-bottom: 22px; }
+.quick-main em { font-style: normal; background: linear-gradient(transparent 62%, rgba(245,180,0,0.4) 62%); }
+.quick-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--gray-3); border-bottom: 1px solid var(--gray-3); margin-bottom: 24px; }
+.quick-nums > div { padding: 14px 16px; border-right: 1px solid var(--gray-3); }
+.quick-nums > div:first-child { padding-left: 0; }
+.quick-nums > div:last-child { border-right: none; }
+.qn-label { display: block; font-size: 11px; color: var(--gray-2); }
+.qn-val { font-size: 13px; font-weight: 700; color: var(--navy); }
+.qn-val { white-space: nowrap; }
+.qn-val b { font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700; margin-right: 2px; }
+.quick-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.quick-card { background: var(--gray-4); border-radius: 12px; padding: 18px 20px; border-left: 4px solid var(--blue); }
+.quick-card h3 { font-size: 15px; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.qstep { width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: var(--white); font-family: 'Outfit', sans-serif; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.quick-card ul { list-style: none; }
+.quick-card li { font-size: 14px; line-height: 1.5; margin-bottom: 10px; color: var(--navy); }
+.quick-card li small { font-size: 11.5px; color: var(--gray-2); font-weight: 400; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { background: var(--white); border: 1px solid var(--gray-3); border-radius: 999px; padding: 4px 12px; font-size: 12.5px; color: var(--navy); font-weight: 500; }
+.quick-card-accent { grid-column: 1 / -1; background: var(--pale); border-left-color: var(--gold); }
+.quick-talk { font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.6; }
+.quick-talk-sub { font-size: 13px; color: var(--gray-1); margin-top: 6px; }
+
+.tabs-head { position: sticky; top: 0; z-index: 10; background: var(--navy); padding: 14px 40px 12px; }
+.tabs-lead { color: var(--white); font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.tabs-lead small { font-size: 11px; font-weight: 400; opacity: 0.65; margin-left: 10px; }
+.sheet-nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.sheet-nav button {
+  font-family: inherit; cursor: pointer; border: 1px solid rgba(255,255,255,0.22);
+  background: transparent; color: rgba(255,255,255,0.85);
+  font-size: 12.5px; font-weight: 700; line-height: 1.35; text-align: left;
+  padding: 6px 12px; border-radius: 8px;
+}
+.sheet-nav button small { display: block; font-size: 10px; font-weight: 400; opacity: 0.7; }
+.sheet-nav button:hover { background: rgba(255,255,255,0.1); }
+.sheet-nav button.is-active { background: var(--white); color: var(--navy); border-color: var(--white); }
+.sheet-nav .tab-all { margin-left: auto; align-self: center; font-weight: 500; font-size: 11.5px; }
+.js-tabs .sheet { display: none; }
+.js-tabs .sheet.is-shown { display: block; }
+.js-tabs .sheet-pale.is-shown:not(.all) { background: var(--white); }
+.js-tabs .sheet-pale.is-shown .circle-grid li { background: var(--gray-4); }
+
+.sheet { padding: 36px 40px 32px; background: var(--white); scroll-margin-top: 130px; min-height: 60vh; }
 .sheet-pale { background: var(--gray-4); }
 .sheet-dark { background: var(--navy); }
 .sheet-dark .sec-head h2 { color: var(--white); }
@@ -662,7 +699,17 @@ body {
 
 @media (max-width: 700px) {
   .sheet { padding-left: 20px; padding-right: 20px; }
-  .sheet-nav { padding: 10px 20px; }
+  .quick { padding: 28px 20px; }
+  .quick-main { font-size: 18px; }
+  .quick-main br { display: none; }
+  .quick-nums, .quick-cols { grid-template-columns: 1fr; }
+  .quick-nums > div { border-right: none; border-bottom: 1px solid var(--gray-3); padding-left: 0; }
+  .quick-nums > div:last-child { border-bottom: none; }
+  .quick-talk { font-size: 16px; }
+  .tabs-head { padding: 10px 20px; position: static; }
+  .sheet-nav button small { display: none; }
+  .sheet-nav .tab-all { margin-left: 0; }
+  .chat-grid { grid-template-columns: 1fr 1fr; }
   .sheet-rows > div { grid-template-columns: 1fr; gap: 2px; }
   .gains-grid, .circle-grid { grid-template-columns: 1fr; }
   .qa > li { padding-left: 38px; }
@@ -694,26 +741,66 @@ body {
   </div>
   <div class="hero-right">
     <div class="about-box">
-      <div class="about-box-title">AT A GLANCE</div>
-      <div class="glance"><div class="glance-l">事業名</div><div class="glance-v">AIを活用した業務効率化サポート<br><small>SKテックラボ／2025年4月創業</small></div></div>
-      <div class="glance"><div class="glance-l">やっていること</div><div class="glance-v">経営者ご自身が、AIで自社専用の業務ツールを作れるようになるまでのマンツーマン伴走</div></div>
-      <div class="glance"><div class="glance-l">実績</div><div class="glance-v">経営者の方から<strong class="num">300</strong>件以上のご相談<br><small>建設・民泊・不動産・観光など</small></div></div>
-      <div class="glance"><div class="glance-l">ご紹介いただきたい方</div><div class="glance-v">社員15〜80名の会社の社長／紙・Excel・LINEで業務を回している会社の経営者</div></div>
-      <div class="glance"><div class="glance-l">BNI</div><div class="glance-v">2025年9月5日入会</div></div>
+      <div class="about-box-title">話のきっかけ</div>
+      <div class="chat-grid">
+        <div class="chat-item"><span class="chat-k">趣味</span><strong>キャンプ</strong><small>月1回ほど。富士五湖周辺が好き</small></div>
+        <div class="chat-item"><span class="chat-k">趣味</span><strong>サウナ</strong><small>サウナ東京がお気に入り</small></div>
+        <div class="chat-item"><span class="chat-k">家族</span><strong>4人兄弟の末っ子</strong><small>兄が3人。毎年家族旅行へ</small></div>
+        <div class="chat-item"><span class="chat-k">最近</span><strong>筋トレ・ドライブ</strong><small>ダイエット中。免許を取りたて</small></div>
+        <div class="chat-item"><span class="chat-k">実は</span><strong>虫が苦手</strong><small>キャンプ好きなのに</small></div>
+        <div class="chat-item"><span class="chat-k">実は</span><strong>元ダンサー</strong><small>昔ダンスをやっていました</small></div>
+      </div>
+      <p class="chat-meta">東京（東雲）出身・日本橋在住／BNI 2025年9月入会</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ SHEET NAV ═══ -->
-<nav class="sheet-nav">
-  <a href="#ryakureki">略歴</a>
-  <a href="#gains">G.A.I.N.S.</a>
-  <a href="#power">Power 1to1</a>
-  <a href="#circle">コンタクトサークル</a>
-  <a href="#levelup">レベルアップ</a>
-  <a href="#kyogyo">協業創出</a>
-  <a href="#customers">直近10件の顧客</a>
-</nav>
+<!-- ═══ 1分でわかる ═══ -->
+<section class="quick">
+  <p class="quick-eyebrow">まずはここだけ｜1分でわかる清水</p>
+  <h2 class="quick-main">経営者ご自身が、<em>AIで自社専用の業務ツール</em>を<br>作れるようになるまで、マンツーマンで伴走します。</h2>
+  <div class="quick-nums">
+    <div><span class="qn-label">経営者からのご相談</span><span class="qn-val"><b>300</b>件以上</span></div>
+    <div><span class="qn-label">民泊140物件の価格調整</span><span class="qn-val"><b>4〜5</b>時間 → 一瞬</span></div>
+    <div><span class="qn-label">建設業14名の会社・効果見込み</span><span class="qn-val">年<b>200〜300</b>万円</span></div>
+  </div>
+  <div class="quick-cols">
+    <div class="quick-card">
+      <h3><span class="qstep">1</span>ご紹介いただきたい方</h3>
+      <ul>
+        <li><strong>社員15〜80名の会社の社長</strong><br><small>採用が難しい／あの人にしかできない仕事がある</small></li>
+        <li><strong>紙・Excel・LINEで回している会社</strong><br><small>建設・不動産・宿泊・観光・小売・飲食など</small></li>
+        <li><strong>個人事業主・ひとり社長</strong><br><small>外注費を減らしたい／自分専用のツールがほしい</small></li>
+      </ul>
+    </div>
+    <div class="quick-card">
+      <h3><span class="qstep">2</span>こんな言葉が聞こえたら</h3>
+      <div class="chips">
+        <span>「人が採れない」</span><span>「また辞めちゃって」</span><span>「あの人が休むと止まる」</span><span>「Excelがぐちゃぐちゃ」</span><span>「今月の利益が分からない」</span><span>「見積もりが高すぎた」</span><span>「AI、何かやらないと」</span>
+      </div>
+    </div>
+    <div class="quick-card quick-card-accent">
+      <h3><span class="qstep">3</span>こう切り出してください</h3>
+      <p class="quick-talk">「今の人数のまま、売上を伸ばすことに興味ありますか？」</p>
+      <p class="quick-talk-sub">「準備不要で45分しゃべるだけ。伸びしろを金額付きで整理してくれる人がいます。売り込みは一切ないそうです」</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SHEET TABS ═══ -->
+<div class="tabs-head" id="sheets">
+  <p class="tabs-lead">くわしくはこちら｜121シート一式<small>見たいシートを選んでください</small></p>
+  <nav class="sheet-nav" role="tablist">
+    <button type="button" data-tab="ryakureki" class="is-active">略歴<small>人となり・経歴</small></button>
+    <button type="button" data-tab="gains">G.A.I.N.S.<small>目標・実績・人脈</small></button>
+    <button type="button" data-tab="power">Power 1to1<small>強み・紹介先</small></button>
+    <button type="button" data-tab="circle">コンタクトサークル<small>組みたい業種</small></button>
+    <button type="button" data-tab="levelup">レベルアップ<small>紹介のヒント</small></button>
+    <button type="button" data-tab="kyogyo">協業創出<small>想い・課題</small></button>
+    <button type="button" data-tab="customers">直近10件の顧客<small>実際のお客様</small></button>
+    <button type="button" data-tab="all" class="tab-all">すべて表示</button>
+  </nav>
+</div>
 
 <!-- ═══ メンバー略歴シート ═══ -->
 <section class="sheet" id="ryakureki">
@@ -1068,5 +1155,22 @@ body {
 
 </div><!-- .page -->
 
+<script>
+(function(){
+  var page=document.querySelector('.page'), btns=document.querySelectorAll('.sheet-nav button'), sheets=document.querySelectorAll('.sheet');
+  if(!btns.length) return;
+  page.classList.add('js-tabs');
+  function show(id, scroll){
+    var ok=false;
+    sheets.forEach(function(x){ var on=(id==='all'||x.id===id); x.classList.toggle('is-shown',on); x.classList.toggle('all',id==='all'); if(on) ok=true; });
+    if(!ok) return show('ryakureki');
+    btns.forEach(function(b){ b.classList.toggle('is-active', b.dataset.tab===id); });
+    if(scroll){ document.getElementById('sheets').scrollIntoView({behavior:'smooth'}); }
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ history.replaceState(null,'','#'+b.dataset.tab); show(b.dataset.tab,true); }); });
+  var h=location.hash.slice(1);
+  show(h||'ryakureki', !!h);
+})();
+</script>
 </body>
 </html>
